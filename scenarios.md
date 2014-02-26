@@ -1,58 +1,6 @@
-# Day 1 - git
+# Practice scenarios
 
-## What is it?
-
-Software que nos permite guardar diferentes puntos en la historia de un 'archivo' (una carpeta de archivos).
-Movernos en esa historia, crear versiones alternativas, fusionar diferentes versiones.
-
-## Why?
-
-### Confident doing changes
-
-Without git:
-	- functions.R
-	- functions_0.R
-	- functions_1(not working).R
-	- functions_1b.R
-	- functions_2(with_improved_plots).R
-	- functions_2(with_improved_plots)_bruno.R
-	- functions_3(no_plots).R
-
-With git:
-	- confident in trying / changing / investiganting ...
-	- going back and forward
-
-### Collaboration made easy
-
-Without git:
-	- email inbox?!
-	- pen drive?!
-	- shared network folders full of many files for the same...?!
-	- looking for differences ?!!
-
-With git:
-	- git push
-	- git pull
-	- work done
-
-
-## Objectives of this course
-
-- Learn some git
-	- locally, just you and yor documents (code)
-	- go back and forward in history
-	- jump to parallel universes (branches)
-	- collide parallel universes (merge branches)
-
-- Connect our repository with others
-	- connect with gitHub
-
-## Concepts
-
-- version control system
-- repository (git)
-	- where is it physically (.git folder)
-- branch
+This file contains the summary of the pratices done during the course. The trainer demonstrates the use of the commands along the story, and the trainees follow him repeating the process.
 
 
 ## Practice 1.1
@@ -70,8 +18,7 @@ With git:
 
 ### Story:
 
-- Simulation of the process of publishing a paper in a journal
-- Writing the paper, making changes and tracking these changes with git
+We simulate the process of publishing a paper in a journal. We use git for tracking the evolution of the paper and deal with serveral eventualities.
 
 ### Start!:
 
@@ -180,14 +127,13 @@ With git:
 
 ### Story
 
-Now the article is ready we send it to a journal. We will track the particular modifications they ask us using git 'banches'
+Now the article for sending to a journal. We will track the particular modifications they ask us using git 'banches'
 
 ### Start
 
 - Read 'Journal of Good Science' reply: rejected
 
 - First day: prepare the paper for 'Journal of Better Sciene'
-
 	- what is a branch? --> explain
 	- create a 'branch' for the adapted version of the paper for this particular journal
 	- > git branch
@@ -195,51 +141,42 @@ Now the article is ready we send it to a journal. We will track the particular m
 	- > git checkout -b jobs
 		- crates and moves to a new branch called 'jobs' for the journal
 		- any commit will go to this branch (not to master)
-
 	- Adapt paper to J.O.B.S. policies:
 		- Introduction must have just 2 lines
 		- Must come with a file 'data.txt' with 'Data Anexes'
 		- make changes and commit (in branch jobs) as "adaptation to jobs journal policy"
-
 	- > git log -3
 
 - Second day: Read 'Journal of Better Science' reply: rejected
-
 	- Also they point out that you have a typo in line 3 of 'Analysis'
 	- go back to master branch, fix the typo and commit it (in master)
 		- > git checkout master
 
 - Third day: prepare the paper for 'Journal of Awesome Science'
-
 	- create a branch for 'joas' based on branch 'master'
 		- > git checkout master
 			- back to 'master' branch
 		- > git checkout - b joas
 		- > git branch
 			- see all three
-
 	- Adapt paper to J.O.A.S. policies:
 		- 4 lines introduction. Must rewrite lines. Different text
 		- Add chapter 5. Thanks to
 		- Must add a file with the cvs of the authors called 'authors.txt'. 
 		- Add it and commit (in joas)
-
 		- Must add a file with the data set: data.txt created for 'jobs'
 			- Need to merge with changes in 'jobs'
 			- > git merge jobs
 			- !!! CONFLICT: becouse the same lines in article.txt are modified in the other paralell version
 			- note that file 'data.txt' is in place
-
 		- Fix confilct
 			- edit article.txt
 			- note how conflict is shown in the introduction
 			- note there is no conclict in '5. Thanks to'
 			- edit and commit as "adaptation to joas journal policy"
-
 	- Send to JOAS ....
 
 - Fourth day: Read 'Journal of Awesome Science' reply: ACCEPTED!
-
 	- Apply all changes in joas branch to master branch
 		- > git checkout master
 		- > git merge joas
@@ -252,33 +189,6 @@ Now the article is ready we send it to a journal. We will track the particular m
 ------------------- end of practice 2 -----------------------------------------
 
 
-## Advanced:
-- commit --ammend
 
-- Ignore previously tracked files
-	- ignore 'vendor' folder
-	- create vendor/lib1 file
+## Practice 2.1 (day 2)
 
-- Add a file inside the ignored folder
-- log: http://gitref.org/inspect/#log
-
-
-### Repaso de comandos básicos
-
-- git init
-- git status
-- git add
-	- git add .
-	- git add -u
-- git commit -m "comentario"
-- git branch
-
-
-# Day 2 - looking for remote repositories: gitHub
-
-## what?
-
-
-- Abrir un repo vacío en gitHub (sin README.md)
-- 
-- git remote add -t origin 
